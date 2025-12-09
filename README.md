@@ -50,9 +50,12 @@ ClinVar public archive of missense variants and their clinical significance; Alp
 - requests, biopython
 - jupyter notebook
 
+## Usage
+
+Run `missense-pathogenicity.ipynb` cells sequentially. Note: ClinVar download and AlphaFold PDB retrieval may take time depending on number of genes analyzed.
+
 ## References
 
 - ClinVar: https://www.ncbi.nlm.nih.gov/clinvar/
 - AlphaFold Database: https://alphafold.ebi.ac.uk/
-- UniProt: https://www.uniprot.org/
 - Landrum et al., Nucleic Acids Research, 2018: https://academic.oup.com/nar/article/46/D1/D1062/4617959
