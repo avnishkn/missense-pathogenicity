@@ -1,16 +1,12 @@
 # Missense Pathogenicity Analysis
 
-A comprehensive analysis of ClinVar missense variants using amino acid features and machine learning to predict pathogenicity.
-
 ## Overview
 
-This project analyzes missense variants from ClinVar to understand the relationship between amino acid properties and pathogenicity. It includes:
+This project analyzes ClinVar missense variants (single-nucleotide changes causing amino acid substitutions) to predict their pathogenicity. Combines traditional biochemical features (Grantham, charge, polarity, volume) with modern structural data (AlphaFold confidence scores) to build a machine learning classifier that can distinguish pathogenic from benign mutations.
 
-- **Data Processing**: ClinVar variant filtering and feature extraction
-- **Amino Acid Features**: Grantham scores, polarity, charge, volume, BLOSUM62
-- **AlphaFold Integration**: pLDDT confidence scores from AlphaFold models
-- **Machine Learning**: Random Forest classifier with feature importance analysis
-- **Visualization**: Comprehensive plots and performance metrics
+## Data Sources
+
+ClinVar public archive of missense variants and their clinical significance; AlphaFold protein structures via UniProt gene-to-protein mapping.
 
 ## Features Analyzed
 
@@ -34,22 +30,17 @@ This project analyzes missense variants from ClinVar to understand the relations
 └── README.md
 ```
 
-## Methodology
+## Analysis
 
-1. **Data Collection**: Download and filter ClinVar missense variants
-2. **Feature Engineering**: Extract amino acid properties and structural features
-3. **AlphaFold Integration**: Download PDB structures and extract pLDDT scores
-4. **Machine Learning**: Train Random Forest classifier with balanced classes
-5. **Evaluation**: Comprehensive performance metrics and feature importance
+1. Download and filter ClinVar missense variants
+2. Extract amino acid features and AlphaFold pLDDT scores
+3. Train Random Forest classifier (balanced classes)
+4. Evaluate performance and feature importance
 
 ## Results
 
-The analysis shows that:
-- **Grantham distance** is the most important feature for pathogenicity prediction
-- **Volume changes** and **charge changes** also contribute significantly
-- **AlphaFold pLDDT scores** provide additional structural context
-- The model successfully identifies high-risk missense variants, achieving **ROC AUC of ~0.75** on test data
-- The model 
+- **Grantham distance** is the most important predictor of pathogenicity, with some significant contributions from **volume changes** and **charge changes**
+- Model successfully identifies high-risk missense variants with initial ROC AUC ~0.75 on initial test data
 
 ## Dependencies
 
@@ -58,3 +49,10 @@ The analysis shows that:
 - matplotlib, seaborn
 - requests, biopython
 - jupyter notebook
+
+## References
+
+- ClinVar: https://www.ncbi.nlm.nih.gov/clinvar/
+- AlphaFold Database: https://alphafold.ebi.ac.uk/
+- UniProt: https://www.uniprot.org/
+- Landrum et al., Nucleic Acids Research, 2018: https://academic.oup.com/nar/article/46/D1/D1062/4617959
